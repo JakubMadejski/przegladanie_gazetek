@@ -6,9 +6,45 @@
     "valid_from": "2026-10-29",
     "valid_to": "2026-11-04",
     "source_url": "https://www.auchan.pl",
-    "pages_count": 28
+    "pages_count": 44
   },
   "deals": [
+    {
+      "id": "auc_monster_energy",
+      "name": "Napój energetyczny Monster Energy 500ml różne smaki",
+      "promo_price": 4.79,
+      "regular_price": 6.89,
+      "conditions": "z kartą Skarbonka Auchan przy zakupie 3 sztuk",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.19,
+      "regular_price": 7.19,
+      "conditions": "z kartą Skarbonka",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_black_energy",
+      "name": "Napój energetyczny Black Energy 250ml",
+      "promo_price": 2.19,
+      "regular_price": 3.29,
+      "conditions": "kup 2 i zapłać mniej",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_tiger_energy",
+      "name": "Napój energetyzujący Tiger 250ml",
+      "promo_price": 2.59,
+      "regular_price": 3.69,
+      "conditions": "z kartą Skarbonka",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
     {
       "id": "auc_maslo_ekstra",
       "name": "Masło Ekstra 82% Auchan Pewni Dobrego 200g",
@@ -34,6 +70,15 @@
       "regular_price": 78.99,
       "conditions": "drugie opakowanie 30% taniej",
       "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_kawa_jacobs_kronung",
+      "name": "Kawa rozpuszczalna Jacobs Krönung 200g słoik",
+      "promo_price": 24.49,
+      "regular_price": 35.99,
+      "conditions": "supercena",
+      "unit_info": "200g",
       "category": "Napoje i kawa"
     },
     {
@@ -73,6 +118,15 @@
       "category": "Owoce i warzywa"
     },
     {
+      "id": "auc_pomidory_malinowe",
+      "name": "Pomidory malinowe klasa I na wagę",
+      "promo_price": 7.99,
+      "regular_price": 12.99,
+      "conditions": "z kartą Skarbonka",
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
       "id": "auc_olej_kujawski",
       "name": "Olej Kujawski z pierwszego tłoczenia 1l",
       "promo_price": 7.49,
@@ -91,6 +145,24 @@
       "category": "Mięso i wędliny"
     },
     {
+      "id": "auc_parowki_berlinki",
+      "name": "Parówki Berlinki Morliny 250g",
+      "promo_price": 4.09,
+      "regular_price": 5.89,
+      "conditions": "z kartą Skarbonka",
+      "unit_info": "250g",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "auc_chipsy_lays",
+      "name": "Chipsy Lay's Solone / Fromage / Papryka 130g",
+      "promo_price": 4.99,
+      "regular_price": 7.39,
+      "conditions": "przy zakupie 2 opakowań",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
       "id": "auc_czekolada_milka",
       "name": "Czekolada Milka wybrane smaki 100g",
       "promo_price": 3.89,
@@ -98,6 +170,51 @@
       "conditions": "przy zakupie 3 sztuk",
       "unit_info": "100g",
       "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "auc_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.15,
+      "regular_price": 4.49,
+      "conditions": "w 4-paku",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_piwo_tyskie",
+      "name": "Piwo Tyskie Gronie 500ml puszka",
+      "promo_price": 2.85,
+      "regular_price": 3.99,
+      "conditions": "z kartą Skarbonka",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_coca_cola",
+      "name": "Napój gazowany Coca-Cola Original 2x 1.5l",
+      "promo_price": 6.39,
+      "regular_price": 8.79,
+      "conditions": "w 2-paku (cena za szt.)",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_woda_cisowianka",
+      "name": "Woda mineralna Cisowianka niegazowana 1.5l",
+      "promo_price": 1.69,
+      "regular_price": 2.49,
+      "conditions": "przy zakupie 6 sztuk",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_papier_regina",
+      "name": "Papier toaletowy Regina Rumiankowy 3 warstwy 16 rolek",
+      "promo_price": 19.99,
+      "regular_price": 29.99,
+      "conditions": "z kartą Skarbonka Auchan",
+      "unit_info": "16 szt",
+      "category": "Chemia i kosmetyki"
     },
     {
       "id": "auc_kapsulki_ariel",

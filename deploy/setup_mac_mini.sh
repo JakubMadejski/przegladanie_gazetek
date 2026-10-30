@@ -83,3 +83,4 @@ echo "  launchctl load $SCHEDULER_PLIST"
 echo ""
 echo "API będzie dostępne pod adresem: http://localhost:8000"
 echo "=== Gotowe! ==="
+

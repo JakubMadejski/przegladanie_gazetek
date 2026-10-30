@@ -6,9 +6,45 @@
     "valid_from": "2026-10-29",
     "valid_to": "2026-11-04",
     "source_url": "https://www.biedronka.pl/pl/gazetki",
-    "pages_count": 32
+    "pages_count": 48
   },
   "deals": [
+    {
+      "id": "bie_monster_energy",
+      "name": "Napój energetyczny Monster Energy różne smaki 500ml",
+      "promo_price": 4.99,
+      "regular_price": 6.99,
+      "conditions": "przy zakupie 3 puszek z aplikacją Moja Biedronka",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.49,
+      "regular_price": 7.29,
+      "conditions": "drugi 40% taniej",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_bepower_energy",
+      "name": "Napój energetyczny BePower Original / Mango 500ml",
+      "promo_price": 2.29,
+      "regular_price": 3.19,
+      "conditions": "2+1 gratis z kartą",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_tiger_energy",
+      "name": "Napój energetyzujący Tiger Energy Drink 250ml",
+      "promo_price": 2.79,
+      "regular_price": 3.89,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
     {
       "id": "bie_maslo_mlekovita",
       "name": "Masło Ekstra 82% Mlekovita 200g",
@@ -34,6 +70,15 @@
       "regular_price": 79.99,
       "conditions": "supercena tygodnia",
       "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_kawa_jacobs_kronung",
+      "name": "Kawa rozpuszczalna Jacobs Krönung 200g",
+      "promo_price": 24.99,
+      "regular_price": 34.99,
+      "conditions": "z aplikacją Moja Biedronka",
+      "unit_info": "200g",
       "category": "Napoje i kawa"
     },
     {
@@ -73,6 +118,15 @@
       "category": "Owoce i warzywa"
     },
     {
+      "id": "bie_pomidory_malinowe",
+      "name": "Pomidory malinowe na wagę",
+      "promo_price": 8.99,
+      "regular_price": 14.99,
+      "conditions": "supercena",
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
       "id": "bie_olej_kujawski",
       "name": "Olej rzepakowy Kujawski 1l",
       "promo_price": 7.99,
@@ -91,6 +145,24 @@
       "category": "Mięso i wędliny"
     },
     {
+      "id": "bie_parowki_berlinki",
+      "name": "Parówki Berlinki Classic Morliny 250g",
+      "promo_price": 3.99,
+      "regular_price": 5.99,
+      "conditions": "2+1 gratis z kartą",
+      "unit_info": "250g",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "bie_chipsy_lays",
+      "name": "Chipsy Lay's z pieca / paprykowe / solone 130g",
+      "promo_price": 4.99,
+      "regular_price": 7.49,
+      "conditions": "przy zakupie 2 paczek",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
       "id": "bie_czekolada_milka",
       "name": "Czekolada Milka alpejska różne smaki 100g",
       "promo_price": 3.99,
@@ -98,6 +170,51 @@
       "conditions": "2+1 gratis z kartą",
       "unit_info": "100g",
       "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "bie_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.19,
+      "regular_price": 4.49,
+      "conditions": "przy zakupie 4-paka",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_piwo_tyskie",
+      "name": "Piwo Tyskie Gronie 500ml butelka zwrotna",
+      "promo_price": 2.79,
+      "regular_price": 3.99,
+      "conditions": "przy zakupie 20 butelek",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_coca_cola",
+      "name": "Napój gazowany Coca-Cola / Coca-Cola Zero 2x 1.5l",
+      "promo_price": 6.49,
+      "regular_price": 8.99,
+      "conditions": "w dwupaku (cena za butelkę)",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_woda_zywiec_zdroj",
+      "name": "Woda źródlana Żywiec Zdrój niegazowana 1.5l",
+      "promo_price": 1.79,
+      "regular_price": 2.69,
+      "conditions": "przy zakupie zgrzewki (6 szt.)",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_papier_velvet",
+      "name": "Papier toaletowy Velvet Delikatnie Biały 3 warstwy 24 rolki",
+      "promo_price": 24.99,
+      "regular_price": 36.99,
+      "conditions": "z aplikacją Moja Biedronka",
+      "unit_info": "24 szt",
+      "category": "Chemia i kosmetyki"
     },
     {
       "id": "bie_kapsulki_ariel",

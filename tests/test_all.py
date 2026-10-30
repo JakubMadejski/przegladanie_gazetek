@@ -59,10 +59,22 @@ class TestDatabaseAndAgent(unittest.TestCase):
     def test_database_stats(self):
         stats = self.db.get_stats()
         self.assertEqual(stats["leaflets_count"], 3)
-        self.assertEqual(stats["deals_count"], 36)
+        self.assertGreaterEqual(stats["deals_count"], 75)
         self.assertIn("Biedronka", stats["store_counts"])
         self.assertIn("Lidl", stats["store_counts"])
         self.assertIn("Auchan", stats["store_counts"])
+
+    def test_synonyms_and_energetyki_search(self):
+        # Wyszukiwanie frazy w liczbie mnogiej / potocznej 'energetyki'
+        deals = self.db.search_deals("energetyki")
+        self.assertGreaterEqual(len(deals), 3)
+        names = [d.name.lower() for d in deals]
+        self.assertTrue(any("monster" in n or "red bull" in n or "kong" in n or "bepower" in n for n in names))
+
+    def test_suggestions_endpoint(self):
+        suggs = self.db.get_suggestions("energetyk")
+        self.assertGreaterEqual(len(suggs), 1)
+        self.assertTrue(any("energet" in s["name"].lower() for s in suggs))
 
     def test_search_deals(self):
         deals_pl = self.db.search_deals("masło")

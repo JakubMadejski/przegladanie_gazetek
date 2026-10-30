@@ -6,9 +6,45 @@
     "valid_from": "2026-10-29",
     "valid_to": "2026-11-04",
     "source_url": "https://www.lidl.pl",
-    "pages_count": 36
+    "pages_count": 48
   },
   "deals": [
+    {
+      "id": "lidl_monster_energy",
+      "name": "Napój energetyczny Monster Energy 500ml puszka",
+      "promo_price": 4.89,
+      "regular_price": 6.99,
+      "conditions": "z kuponem Lidl Plus przy zakupie 2 sztuk",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.29,
+      "regular_price": 6.99,
+      "conditions": "supercena w 4-paku",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_kong_strong",
+      "name": "Napój energetyczny Kong Strong Wild / Regular 250ml",
+      "promo_price": 1.79,
+      "regular_price": 2.49,
+      "conditions": "3+1 gratis z kuponem Lidl Plus",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_tiger_energy",
+      "name": "Napój energetyzujący Tiger Energy Drink 250ml",
+      "promo_price": 2.69,
+      "regular_price": 3.79,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
     {
       "id": "lidl_maslo_pilos",
       "name": "Masło Ekstra 82% Pilos 200g",
@@ -34,6 +70,15 @@
       "regular_price": 76.99,
       "conditions": "z kuponem Lidl Plus",
       "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_kawa_jacobs_kronung",
+      "name": "Kawa rozpuszczalna Jacobs Krönung 200g",
+      "promo_price": 23.99,
+      "regular_price": 33.99,
+      "conditions": "okazja cenowa",
+      "unit_info": "200g",
       "category": "Napoje i kawa"
     },
     {
@@ -73,6 +118,15 @@
       "category": "Owoce i warzywa"
     },
     {
+      "id": "lidl_pomidory_malinowe",
+      "name": "Pomidory malinowe polskie luzem",
+      "promo_price": 8.49,
+      "regular_price": 13.99,
+      "conditions": "z kuponem Lidl Plus",
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
       "id": "lidl_olej_vitador",
       "name": "Olej rzepakowy Vita D'or 1l",
       "promo_price": 6.99,
@@ -91,6 +145,24 @@
       "category": "Mięso i wędliny"
     },
     {
+      "id": "lidl_parowki_berlinki",
+      "name": "Parówki Berlinki Morliny 250g",
+      "promo_price": 4.19,
+      "regular_price": 5.99,
+      "conditions": "drugie opakowanie 60% taniej",
+      "unit_info": "250g",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "lidl_chipsy_lays",
+      "name": "Chipsy Lay's Max / Papryka / Solone 130g",
+      "promo_price": 4.89,
+      "regular_price": 7.29,
+      "conditions": "przy zakupie 2 sztuk z aplikacją",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
       "id": "lidl_czekolada_fin_carre",
       "name": "Czekolada Fin Carré pełnomleczna z orzechami laskowymi 100g",
       "promo_price": 3.49,
@@ -98,6 +170,51 @@
       "conditions": "kup 3 w cenie 2",
       "unit_info": "100g",
       "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "lidl_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.09,
+      "regular_price": 4.39,
+      "conditions": "w 6-paku",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_piwo_tyskie",
+      "name": "Piwo Tyskie Gronie 500ml puszka",
+      "promo_price": 2.89,
+      "regular_price": 3.99,
+      "conditions": "przy zakupie 8 sztuk",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_coca_cola",
+      "name": "Napój gazowany Coca-Cola 1.5l butelka",
+      "promo_price": 6.29,
+      "regular_price": 8.49,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_woda_saguaro",
+      "name": "Woda mineralna Saguaro niegazowana 1.5l",
+      "promo_price": 1.19,
+      "regular_price": 1.79,
+      "conditions": "przy zakupie zgrzewki (6 szt.)",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_papier_floralys",
+      "name": "Papier toaletowy Floralys 3-warstwowy 16 rolek",
+      "promo_price": 17.99,
+      "regular_price": 26.99,
+      "conditions": "z kuponem Lidl Plus",
+      "unit_info": "16 szt",
+      "category": "Chemia i kosmetyki"
     },
     {
       "id": "lidl_kapsulki_ariel",

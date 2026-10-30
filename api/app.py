@@ -59,6 +59,16 @@ def get_stats():
     }
 
 
+@app.get("/api/suggestions")
+def get_suggestions(q: str = Query(..., min_length=2)):
+    """Zwraca podpowiedzi produktów do autouzupełniania podczas pisania."""
+    suggestions = db.get_suggestions(q, limit=8)
+    return {
+        "query": q,
+        "suggestions": suggestions
+    }
+
+
 @app.get("/api/search")
 def search_deals(q: str = Query(..., min_length=2), store: Optional[str] = None):
     """Wyszukuje promocje dla podanego hasła (np. 'masło', 'kawa')."""
@@ -117,3 +127,4 @@ def index_page():
         with open(html_path, "r", encoding="utf-8") as f:
             return f.read()
     return "<h1>GazetkoAgent API is running!</h1>"
+

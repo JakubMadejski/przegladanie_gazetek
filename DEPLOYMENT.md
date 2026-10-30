@@ -93,3 +93,4 @@ Jeśli wolisz, aby sam plik HTML był hostowany na Twoim tradycyjnym serwerze FT
    const API_BASE = "https://twoj-tunel-mac-mini.twojadomena.pl";
    ```
 3. Użytkownicy wchodzą na Twoją stronę w home.pl, a zapytania o promocje lecą do potężnego Maca mini w Twoim pokoju!
+

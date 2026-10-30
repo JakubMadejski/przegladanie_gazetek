@@ -6,6 +6,7 @@ from .normalizer import (
     detect_conditions
 )
 from .parser import DealParser
+from .synonyms import expand_search_terms, stem_polish_word
 
 __all__ = [
     "strip_accents",
@@ -13,6 +14,7 @@ __all__ = [
     "extract_unit_and_quantity",
     "detect_category",
     "detect_conditions",
-    "DealParser"
+    "DealParser",
+    "expand_search_terms",
+    "stem_polish_word"
 ]
-

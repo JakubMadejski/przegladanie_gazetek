@@ -6,6 +6,8 @@ from pathlib import Path
 from typing import Generator, List, Optional, Tuple
 from models import Leaflet, ProductDeal, StoreName
 
+from extractor.synonyms import expand_search_terms, stem_polish_word
+
 DEFAULT_DB_PATH = Path(__file__).resolve().parent.parent / "data" / "gazetki.db"
 
 
@@ -179,12 +181,14 @@ class Database:
         if not words:
             return []
 
+        expanded_terms = expand_search_terms(norm_query)
+
         with self._connection() as conn:
             cur = conn.cursor()
             
+            # 1. Dokładne dopasowanie wszystkich słów z zapytania
             conditions = []
             params = []
-
             for w in words:
                 conditions.append("normalized_name LIKE ?")
                 params.append(f"%{w}%")
@@ -201,21 +205,74 @@ class Database:
                 LIMIT ?
             """
             params.append(limit)
-
             cur.execute(sql, params)
             rows = cur.fetchall()
 
-            if not rows and len(words) > 1:
-                alt_conditions = " OR ".join(["normalized_name LIKE ?" for _ in words])
-                alt_params = [f"%{w}%" for w in words]
+            if rows:
+                return [self._row_to_deal(r) for r in rows]
+
+            # 2. Jeśli brak wyników, szukamy po synonimach i rdzeniach słów (np. energetyki -> monster, red bull)
+            syn_conditions = []
+            syn_params = []
+            for term in expanded_terms:
+                syn_conditions.append("normalized_name LIKE ?")
+                syn_params.append(f"%{term}%")
+
+            if syn_conditions:
+                syn_where = " OR ".join(syn_conditions)
                 if store:
-                    alt_conditions = f"({alt_conditions}) AND store = ?"
-                    alt_params.append(store.value)
-                alt_params.append(limit)
-                cur.execute(f"SELECT * FROM product_deals WHERE {alt_conditions} ORDER BY promo_price ASC LIMIT ?", alt_params)
+                    syn_where = f"({syn_where}) AND store = ?"
+                    syn_params.append(store.value)
+                syn_params.append(limit)
+                cur.execute(f"SELECT * FROM product_deals WHERE {syn_where} ORDER BY promo_price ASC LIMIT ?", syn_params)
                 rows = cur.fetchall()
 
             return [self._row_to_deal(r) for r in rows]
+
+    def get_suggestions(self, prefix: str, limit: int = 8) -> List[dict]:
+        """Zwraca inteligentne podpowiedzi produktów dla autouzupełniania (uwzględnia synonimy i odmiany)."""
+        norm = normalize_polish_text(prefix)
+        if len(norm) < 2:
+            return []
+
+        expanded = expand_search_terms(norm)
+        # Dodajemy też obcięty rdzeń (np. energetyk -> energet)
+        if norm.startswith("energet"):
+            expanded.append("energet")
+
+        with self._connection() as conn:
+            cur = conn.cursor()
+
+            conditions = []
+            params = []
+            for term in expanded:
+                conditions.append("normalized_name LIKE ?")
+                params.append(f"%{term}%")
+
+            where_clause = " OR ".join(conditions)
+            sql = f"""
+                SELECT DISTINCT name, store, promo_price, category
+                FROM product_deals
+                WHERE {where_clause}
+                ORDER BY promo_price ASC
+                LIMIT ?
+            """
+            params.append(limit)
+            cur.execute(sql, params)
+            
+            suggestions = []
+            seen = set()
+            for r in cur.fetchall():
+                name = r["name"]
+                if name not in seen:
+                    seen.add(name)
+                    suggestions.append({
+                        "name": name,
+                        "store": r["store"],
+                        "price": r["promo_price"],
+                        "category": r["category"]
+                    })
+            return suggestions
 
     def get_deals_by_store(self, store: StoreName, limit: int = 50) -> List[ProductDeal]:
         with self._connection() as conn:
