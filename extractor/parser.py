@@ -9,6 +9,7 @@ from .normalizer import (
     detect_category,
     detect_conditions
 )
+from .image_fetcher import get_product_image_url
 
 
 class DealParser:
@@ -49,6 +50,7 @@ class DealParser:
             unit_price = round(promo_price / qty, 2)
 
         category = raw_data.get("category") or detect_category(name)
+        image_url = raw_data.get("image_url") or get_product_image_url(name, category)
 
         deal_id = raw_data.get("id") or f"{store.value.lower()}_{uuid.uuid4().hex[:8]}"
 
@@ -69,7 +71,7 @@ class DealParser:
             valid_from=raw_data.get("valid_from") or default_valid_from,
             valid_to=raw_data.get("valid_to") or default_valid_to,
             page_number=raw_data.get("page_number", 1),
-            image_url=raw_data.get("image_url"),
+            image_url=image_url,
             raw_text=raw_text
         )
 
