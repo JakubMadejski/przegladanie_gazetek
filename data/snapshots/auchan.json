@@ -1,0 +1,121 @@
+{
+  "leaflet": {
+    "id": "auchan_gazetka_aktualna",
+    "store": "Auchan",
+    "title": "Auchan - Festiwal Niskich Cen i Promocji",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://www.auchan.pl",
+    "pages_count": 28
+  },
+  "deals": [
+    {
+      "id": "auc_maslo_ekstra",
+      "name": "Masło Ekstra 82% Auchan Pewni Dobrego 200g",
+      "promo_price": 4.69,
+      "regular_price": 6.99,
+      "conditions": "cena z kartą Skarbonka Auchan",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "auc_kurczak_filet",
+      "name": "Świeży filet z piersi kurczaka Auchan",
+      "promo_price": 15.99,
+      "regular_price": 23.49,
+      "conditions": "z kartą Skarbonka Auchan, limit 4 kg",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "auc_kawa_lavazza_oro",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 56.99,
+      "regular_price": 78.99,
+      "conditions": "drugie opakowanie 30% taniej",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "auc_mleko_uht",
+      "name": "Mleko UHT Auchan 3.2% 1l",
+      "promo_price": 2.99,
+      "regular_price": 3.89,
+      "conditions": "przy zakupie 4 sztuk",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "auc_jaja_klasa_m",
+      "name": "Jaja ściółkowe klasa M Auchan 10 sztuk",
+      "promo_price": 6.79,
+      "regular_price": 8.99,
+      "conditions": "z kartą Skarbonka Auchan",
+      "unit_info": "10 szt",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "auc_banany",
+      "name": "Banany świeże na wagę",
+      "promo_price": 3.69,
+      "regular_price": 6.49,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "auc_jablka_polskie",
+      "name": "Jabłka polskie Jonagold luz",
+      "promo_price": 2.59,
+      "regular_price": 4.19,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "auc_olej_kujawski",
+      "name": "Olej Kujawski z pierwszego tłoczenia 1l",
+      "promo_price": 7.49,
+      "regular_price": 10.49,
+      "conditions": "z kartą Skarbonka Auchan",
+      "unit_info": "1l",
+      "category": "Podstawowe produkty"
+    },
+    {
+      "id": "auc_schab_b_k",
+      "name": "Schab wieprzowy bez kości pakowany próżniowo",
+      "promo_price": 12.49,
+      "regular_price": 17.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "auc_czekolada_milka",
+      "name": "Czekolada Milka wybrane smaki 100g",
+      "promo_price": 3.89,
+      "regular_price": 5.29,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "auc_kapsulki_ariel",
+      "name": "Kapsułki do prania Ariel Allin1 44 sztuki",
+      "promo_price": 51.99,
+      "regular_price": 75.99,
+      "conditions": null,
+      "unit_info": "44 szt",
+      "category": "Chemia i kosmetyki"
+    },
+    {
+      "id": "auc_ser_gouda",
+      "name": "Ser Gouda w plastrach Auchan 400g",
+      "promo_price": 9.49,
+      "regular_price": 13.99,
+      "conditions": "z kartą Skarbonka Auchan",
+      "unit_info": "400g",
+      "category": "Nabiał i jaja"
+    }
+  ]
+}

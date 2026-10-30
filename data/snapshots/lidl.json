@@ -1,0 +1,121 @@
+{
+  "leaflet": {
+    "id": "lidl_gazetka_aktualna",
+    "store": "Lidl",
+    "title": "Lidl - Tydzień Cenowych Okazji",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://www.lidl.pl",
+    "pages_count": 36
+  },
+  "deals": [
+    {
+      "id": "lidl_maslo_pilos",
+      "name": "Masło Ekstra 82% Pilos 200g",
+      "promo_price": 4.29,
+      "regular_price": 7.49,
+      "conditions": "z kuponem Lidl Plus, aktywuj w aplikacji, limit 3 szt.",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "lidl_kurczak_filet",
+      "name": "Świeży polski filet z piersi kurczaka Rzeźnik XXL",
+      "promo_price": 17.49,
+      "regular_price": 23.99,
+      "conditions": "supercena tygodnia",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "lidl_kawa_lavazza_oro",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 52.99,
+      "regular_price": 76.99,
+      "conditions": "z kuponem Lidl Plus",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "lidl_mleko_pilos",
+      "name": "Mleko UHT Pilos 3.2% 1l",
+      "promo_price": 2.79,
+      "regular_price": 3.99,
+      "conditions": "przy zakupie 6 szt. z aplikacją Lidl Plus",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "lidl_jaja_zlota_nioska",
+      "name": "Jaja ściółkowe klasa L Złota Nioska 10 sztuk",
+      "promo_price": 7.29,
+      "regular_price": 9.99,
+      "conditions": "drugie opakowanie 40% taniej",
+      "unit_info": "10 szt",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "lidl_banany",
+      "name": "Banany luzem świeże",
+      "promo_price": 3.79,
+      "regular_price": 6.99,
+      "conditions": "taniej o 45%",
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "lidl_jablka_polskie",
+      "name": "Jabłka polskie Jonagored / Ligol luzem",
+      "promo_price": 2.29,
+      "regular_price": 3.99,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "lidl_olej_vitador",
+      "name": "Olej rzepakowy Vita D'or 1l",
+      "promo_price": 6.99,
+      "regular_price": 9.49,
+      "conditions": "przy zakupie 2 butelek",
+      "unit_info": "1l",
+      "category": "Podstawowe produkty"
+    },
+    {
+      "id": "lidl_schab_rzeznika",
+      "name": "Schab wieprzowy bez kości Rzeźnik XXL",
+      "promo_price": 11.99,
+      "regular_price": 17.99,
+      "conditions": "z kuponem Lidl Plus, limit 3kg",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "lidl_czekolada_fin_carre",
+      "name": "Czekolada Fin Carré pełnomleczna z orzechami laskowymi 100g",
+      "promo_price": 3.49,
+      "regular_price": 4.99,
+      "conditions": "kup 3 w cenie 2",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "lidl_kapsulki_ariel",
+      "name": "Kapsułki do prania Ariel Allin1 Pods Color 44 sztuki",
+      "promo_price": 47.99,
+      "regular_price": 72.99,
+      "conditions": "z kuponem w aplikacji",
+      "unit_info": "44 szt",
+      "category": "Chemia i kosmetyki"
+    },
+    {
+      "id": "lidl_ser_gouda",
+      "name": "Ser Gouda w plastrach Pilos XXL 500g",
+      "promo_price": 9.99,
+      "regular_price": 14.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "500g",
+      "category": "Nabiał i jaja"
+    }
+  ]
+}

@@ -47,7 +47,9 @@ secrets.json
 .DS_Store
 
 # Data / Caches
-data/
+data/*
+!data/snapshots/
+!data/snapshots/*.json
 cache/
 downloads/
 temp/

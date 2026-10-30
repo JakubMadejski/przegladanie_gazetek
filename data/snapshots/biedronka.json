@@ -1,0 +1,121 @@
+{
+  "leaflet": {
+    "id": "biedronka_gazetka_aktualna",
+    "store": "Biedronka",
+    "title": "Biedronka - Okazje Tygodnia Od Czwartku",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://www.biedronka.pl/pl/gazetki",
+    "pages_count": 32
+  },
+  "deals": [
+    {
+      "id": "bie_maslo_mlekovita",
+      "name": "Masło Ekstra 82% Mlekovita 200g",
+      "promo_price": 4.49,
+      "regular_price": 7.49,
+      "conditions": "przy zakupie 3 szt. z aplikacją Moja Biedronka, limit dzienny 6 szt.",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "bie_kurczak_filet",
+      "name": "Świeży filet z piersi kurczaka Kraina Mięs pakowany próżniowo",
+      "promo_price": 16.99,
+      "regular_price": 24.99,
+      "conditions": "z aplikacją Moja Biedronka, limit 3 kg",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "bie_kawa_lavazza_oro",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 54.99,
+      "regular_price": 79.99,
+      "conditions": "supercena tygodnia",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "bie_mleko_laciate",
+      "name": "Mleko UHT Łaciate 3.2% 1l",
+      "promo_price": 2.89,
+      "regular_price": 4.29,
+      "conditions": "przy zakupie kartonu (12 szt.) z aplikacją",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "bie_jaja_chowaniec",
+      "name": "Jaja ściółkowe klasa M Moja Kurka 10 sztuk",
+      "promo_price": 6.99,
+      "regular_price": 9.49,
+      "conditions": "drugie opakowanie 50% taniej",
+      "unit_info": "10 szt",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "bie_banany",
+      "name": "Banany premium na wagę",
+      "promo_price": 3.49,
+      "regular_price": 6.99,
+      "conditions": "-50% z kartą Moja Biedronka",
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "bie_jablka_polskie",
+      "name": "Jabłka polskie deserowe Szampion / Gala na wagę",
+      "promo_price": 2.49,
+      "regular_price": 4.49,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "bie_olej_kujawski",
+      "name": "Olej rzepakowy Kujawski 1l",
+      "promo_price": 7.99,
+      "regular_price": 10.99,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "1l",
+      "category": "Podstawowe produkty"
+    },
+    {
+      "id": "bie_schab_b_k",
+      "name": "Schab wieprzowy bez kości Kraina Mięs",
+      "promo_price": 12.99,
+      "regular_price": 18.99,
+      "conditions": "z aplikacją Moja Biedronka",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "bie_czekolada_milka",
+      "name": "Czekolada Milka alpejska różne smaki 100g",
+      "promo_price": 3.99,
+      "regular_price": 5.49,
+      "conditions": "2+1 gratis z kartą",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "bie_kapsulki_ariel",
+      "name": "Kapsułki do prania Ariel Allin1 Pods 44 szt.",
+      "promo_price": 49.99,
+      "regular_price": 74.99,
+      "conditions": "supercena",
+      "unit_info": "44 szt",
+      "category": "Chemia i kosmetyki"
+    },
+    {
+      "id": "bie_ser_gouda",
+      "name": "Ser Gouda w plastrach Światowid 400g",
+      "promo_price": 8.99,
+      "regular_price": 12.49,
+      "conditions": "z aplikacją Moja Biedronka",
+      "unit_info": "400g",
+      "category": "Nabiał i jaja"
+    }
+  ]
+}
