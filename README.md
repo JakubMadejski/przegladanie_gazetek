@@ -55,3 +55,4 @@ pip install -r requirements.txt
 ## 📄 Licencja
 
 Projekt rozwijany przez [JakubMadejski](https://github.com/JakubMadejski).
+
