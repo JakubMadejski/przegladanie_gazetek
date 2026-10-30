@@ -76,6 +76,20 @@ class TestDatabaseAndAgent(unittest.TestCase):
         self.assertGreaterEqual(len(suggs), 1)
         self.assertTrue(any("energet" in s["name"].lower() for s in suggs))
 
+    def test_typo_tolerance_fuzzy_search(self):
+        # Test literówek: 'enrgetyki' -> energetyki
+        deals_typo1 = self.db.search_deals("enrgetyki")
+        self.assertGreaterEqual(len(deals_typo1), 3)
+
+        # Test literówki: 'msalo' -> masło
+        deals_typo2 = self.db.search_deals("msalo")
+        self.assertGreaterEqual(len(deals_typo2), 3)
+
+        # Test koszyka z literówkami
+        items = self.agent.parse_customer_query_to_items("2x msalo, enrgetyki, kruczak")
+        comparison = self.agent.compare_basket(items)
+        self.assertEqual(comparison.store_summaries[0].items_found, 3)
+
     def test_search_deals(self):
         deals_pl = self.db.search_deals("masło")
         self.assertGreaterEqual(len(deals_pl), 3)

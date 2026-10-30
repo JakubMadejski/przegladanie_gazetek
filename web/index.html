@@ -300,9 +300,17 @@
           `;
         }).join('');
 
+        const typoNotice = data.corrected_query ? `
+          <div class="mb-4 p-3 bg-blue-50 text-blue-800 rounded-xl border border-blue-200 text-sm flex items-center space-x-2">
+            <span>💡</span>
+            <span>Poprawiono literówkę: wyszukano promocje dla <b>"${data.corrected_query}"</b> (zamiast <i>"${data.query}"</i>).</span>
+          </div>
+        ` : '';
+
         resultsArea.innerHTML = `
+          ${typoNotice}
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold text-slate-900">Znalezione promocje (${data.results_count}) dla: <span class="text-emerald-700">"${query}"</span></h3>
+            <h3 class="text-lg font-bold text-slate-900">Znalezione promocje (${data.results_count}) dla: <span class="text-emerald-700">"${data.corrected_query || query}"</span></h3>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             ${dealsHtml}

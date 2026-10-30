@@ -71,7 +71,7 @@ def get_suggestions(q: str = Query(..., min_length=2)):
 
 @app.get("/api/search")
 def search_deals(q: str = Query(..., min_length=2), store: Optional[str] = None):
-    """Wyszukuje promocje dla podanego hasła (np. 'masło', 'kawa')."""
+    """Wyszukuje promocje dla podanego hasła (z automatyczną korektą literówek)."""
     target_store = None
     if store:
         for s in StoreName:
@@ -79,9 +79,10 @@ def search_deals(q: str = Query(..., min_length=2), store: Optional[str] = None)
                 target_store = s
                 break
 
-    deals = db.search_deals(q, store=target_store, limit=30)
+    deals, corrected_query = db.search_deals_with_info(q, store=target_store, limit=30)
     return {
         "query": q,
+        "corrected_query": corrected_query,
         "results_count": len(deals),
         "deals": [d.model_dump() for d in deals]
     }

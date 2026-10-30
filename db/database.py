@@ -7,6 +7,7 @@ from typing import Generator, List, Optional, Tuple
 from models import Leaflet, ProductDeal, StoreName
 
 from extractor.synonyms import expand_search_terms, stem_polish_word
+from extractor.fuzzy import correct_query_typos, find_best_typo_match
 
 DEFAULT_DB_PATH = Path(__file__).resolve().parent.parent / "data" / "gazetki.db"
 
@@ -175,11 +176,28 @@ class Database:
                     deal.conditions or ""
                 ))
 
+    def _get_vocabulary(self) -> Set[str]:
+        """Zwraca unikalne słowa z bazy danych do korekty literówek."""
+        with self._connection() as conn:
+            cur = conn.cursor()
+            cur.execute("SELECT normalized_name FROM product_deals")
+            words = set()
+            for r in cur.fetchall():
+                for w in r["normalized_name"].split():
+                    if len(w) >= 3:
+                        words.add(w)
+            return words
+
     def search_deals(self, query: str, store: Optional[StoreName] = None, limit: int = 20) -> List[ProductDeal]:
+        deals, _ = self.search_deals_with_info(query, store=store, limit=limit)
+        return deals
+
+    def search_deals_with_info(self, query: str, store: Optional[StoreName] = None, limit: int = 20) -> Tuple[List[ProductDeal], Optional[str]]:
+        """Wyszukuje promocje z automatyczną korektą literówek (np. enrgetyki -> energetyki)."""
         norm_query = normalize_polish_text(query)
         words = [w for w in norm_query.split() if len(w) > 1]
         if not words:
-            return []
+            return [], None
 
         expanded_terms = expand_search_terms(norm_query)
 
@@ -209,9 +227,9 @@ class Database:
             rows = cur.fetchall()
 
             if rows:
-                return [self._row_to_deal(r) for r in rows]
+                return [self._row_to_deal(r) for r in rows], None
 
-            # 2. Jeśli brak wyników, szukamy po synonimach i rdzeniach słów (np. energetyki -> monster, red bull)
+            # 2. Szukanie po synonimach i rdzeniach słów (np. energetyki -> monster, red bull)
             syn_conditions = []
             syn_params = []
             for term in expanded_terms:
@@ -227,16 +245,37 @@ class Database:
                 cur.execute(f"SELECT * FROM product_deals WHERE {syn_where} ORDER BY promo_price ASC LIMIT ?", syn_params)
                 rows = cur.fetchall()
 
-            return [self._row_to_deal(r) for r in rows]
+            if rows:
+                return [self._row_to_deal(r) for r in rows], None
+
+            # 3. Jeśli wciąż brak wyników -> automatyczna korekta literówek w słowach zapytania
+            vocab = self._get_vocabulary()
+            corrected_query, has_corrections = correct_query_typos(norm_query, vocab)
+
+            if has_corrections and corrected_query != norm_query:
+                corrected_expanded = expand_search_terms(corrected_query)
+                corr_conditions = ["normalized_name LIKE ?" for _ in corrected_expanded]
+                corr_params = [f"%{t}%" for t in corrected_expanded]
+                
+                corr_where = " OR ".join(corr_conditions)
+                if store:
+                    corr_where = f"({corr_where}) AND store = ?"
+                    corr_params.append(store.value)
+                corr_params.append(limit)
+                cur.execute(f"SELECT * FROM product_deals WHERE {corr_where} ORDER BY promo_price ASC LIMIT ?", corr_params)
+                rows = cur.fetchall()
+                if rows:
+                    return [self._row_to_deal(r) for r in rows], corrected_query
+
+            return [], None
 
     def get_suggestions(self, prefix: str, limit: int = 8) -> List[dict]:
-        """Zwraca inteligentne podpowiedzi produktów dla autouzupełniania (uwzględnia synonimy i odmiany)."""
+        """Zwraca inteligentne podpowiedzi produktów dla autouzupełniania (uwzględnia synonimy i literówki)."""
         norm = normalize_polish_text(prefix)
         if len(norm) < 2:
             return []
 
         expanded = expand_search_terms(norm)
-        # Dodajemy też obcięty rdzeń (np. energetyk -> energet)
         if norm.startswith("energet"):
             expanded.append("energet")
 
@@ -259,10 +298,22 @@ class Database:
             """
             params.append(limit)
             cur.execute(sql, params)
+            rows = cur.fetchall()
+
+            # Jeśli brak wyników, spróbujmy poprawić literówkę w prefiksie
+            if not rows and len(norm) >= 3:
+                vocab = self._get_vocabulary()
+                typo_fix = find_best_typo_match(norm, vocab)
+                if typo_fix:
+                    fix_expanded = expand_search_terms(typo_fix)
+                    fix_cond = " OR ".join(["normalized_name LIKE ?" for _ in fix_expanded])
+                    fix_params = [f"%{t}%" for t in fix_expanded] + [limit]
+                    cur.execute(f"SELECT DISTINCT name, store, promo_price, category FROM product_deals WHERE {fix_cond} ORDER BY promo_price ASC LIMIT ?", fix_params)
+                    rows = cur.fetchall()
             
             suggestions = []
             seen = set()
-            for r in cur.fetchall():
+            for r in rows:
                 name = r["name"]
                 if name not in seen:
                     seen.add(name)

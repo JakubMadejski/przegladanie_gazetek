@@ -1,5 +1,6 @@
 from typing import List, Set
 from .normalizer import strip_accents
+from .fuzzy import find_best_typo_match
 
 # Słownik synonimów, powiązanych marek i pojęć handlowych w polskich sklepach
 SYNONYM_GROUPS = {
@@ -62,25 +63,41 @@ def stem_polish_word(word: str) -> str:
 
 
 def expand_search_terms(query: str) -> List[str]:
-    """Zwraca listę słów kluczowych i synonimów dla zapytania (np. 'energetyki' -> monster, red bull...)."""
+    """Zwraca listę słów kluczowych i synonimów dla zapytania (uwzględniając literówki)."""
     norm = strip_accents(query)
     tokens = [t for t in norm.split() if len(t) > 1]
     
     expanded: Set[str] = set(tokens)
 
-    # 1. Sprawdzamy bezpośrednie synonimy całego zapytania
+    # 1. Sprawdzamy bezpośrednie synonimy lub literówki całego zapytania
     if norm in SYNONYM_GROUPS:
         for syn in SYNONYM_GROUPS[norm]:
             expanded.add(syn)
+    else:
+        # Sprawdzamy czy to nie literówka w kluczu synonimów
+        typo_match = find_best_typo_match(norm, SYNONYM_GROUPS.keys())
+        if typo_match and typo_match in SYNONYM_GROUPS:
+            expanded.add(typo_match)
+            for syn in SYNONYM_GROUPS[typo_match]:
+                expanded.add(syn)
 
     # 2. Sprawdzamy per token
     for tok in tokens:
+        matched_tok = tok
         if tok in SYNONYM_GROUPS:
             for syn in SYNONYM_GROUPS[tok]:
                 expanded.add(syn)
-        
+        else:
+            # Sprawdzenie literówki w tokenie
+            tok_typo = find_best_typo_match(tok, SYNONYM_GROUPS.keys())
+            if tok_typo and tok_typo in SYNONYM_GROUPS:
+                matched_tok = tok_typo
+                expanded.add(tok_typo)
+                for syn in SYNONYM_GROUPS[tok_typo]:
+                    expanded.add(syn)
+
         # Sprawdzamy po rdzeniu słowa
-        stem = stem_polish_word(tok)
+        stem = stem_polish_word(matched_tok)
         expanded.add(stem)
         for key, syns in SYNONYM_GROUPS.items():
             if stem == stem_polish_word(key):
