@@ -94,3 +94,4 @@ class DealParser:
             if deal:
                 deals.append(deal)
         return deals
+

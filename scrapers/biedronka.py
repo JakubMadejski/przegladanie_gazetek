@@ -79,3 +79,4 @@ class BiedronkaScraper(BaseScraper):
             data = json.load(f)
         raw_deals = data.get("deals", [])
         return DealParser.parse_deal_list(raw_deals, leaflet_id=leaflet_id, store=self.store)
+

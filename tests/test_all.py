@@ -90,6 +90,32 @@ class TestDatabaseAndAgent(unittest.TestCase):
         self.assertIn("Najtaniej", response)
         self.assertTrue("Lidl" in response or "Biedronka" in response or "Auchan" in response)
 
+    def test_fastapi_endpoints(self):
+        from fastapi.testclient import TestClient
+        from api.app import app
+        client = TestClient(app)
+        
+        # Test stats
+        res = client.get("/api/stats")
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("deals_count", res.json())
+
+        # Test search
+        res = client.get("/api/search?q=masło")
+        self.assertEqual(res.status_code, 200)
+        self.assertGreater(len(res.json()["deals"]), 0)
+
+        # Test basket
+        res = client.post("/api/basket", json={"query": "masło, mleko"})
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("best_store", res.json())
+
+        # Test HTML frontend
+        res = client.get("/")
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("GazetkoAgent", res.text)
+
 
 if __name__ == "__main__":
     unittest.main()
+

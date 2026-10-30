@@ -16,3 +16,4 @@ class Leaflet(BaseModel):
     page_urls: List[str] = Field(default_factory=list)
     pages_count: int = 0
     scraped_at: Optional[str] = None
+

@@ -40,3 +40,4 @@ class ScraperManager:
         for store in self.scrapers.keys():
             results[store.value] = self.sync_store(store)
         return results
+

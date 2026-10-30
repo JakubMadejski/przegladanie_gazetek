@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GazetkoAgent - Gdzie zrobisz najtańsze zakupy?</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .badge-b { background-color: #e51d25; color: white; }
+    .badge-l { background-color: #0050aa; color: #ffed00; }
+    .badge-a { background-color: #00703c; color: white; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-3xl">🛒</span>
+        <div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">GazetkoAgent</h1>
+          <p class="text-xs text-slate-500 font-medium">Inteligentny Asystent Zakupowy & Gazetki</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 text-xs font-semibold">
+        <span class="px-2.5 py-1 bg-red-50 text-red-700 rounded-full border border-red-200">🐞 Biedronka</span>
+        <span class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">🟡 Lidl</span>
+        <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">🐦 Auchan</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero & Input -->
+  <main class="max-w-5xl mx-auto px-4 py-8 flex-1 w-full">
+    
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Gdzie Twoje zakupy wyjdą <span class="text-emerald-600">najtaniej?</span>
+      </h2>
+      <p class="mt-2 text-slate-600 text-sm sm:text-base">
+        Wpisz swoją listę zakupów lub produkt. Agent przeanalizuje aktualne gazetki, przeliczy koszyk i wskaże sklep z największą oszczędnością!
+      </p>
+    </div>
+
+    <!-- Card Form -->
+    <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-200 p-4 sm:p-6 mb-8 transition-all">
+      
+      <!-- Tabs -->
+      <div class="flex space-x-2 border-b border-slate-100 pb-4 mb-4 text-sm font-semibold">
+        <button id="tabBasket" onclick="switchTab('basket')" class="px-4 py-2 rounded-xl bg-emerald-600 text-white transition shadow-sm">
+          🧺 Cały Koszyk Zakupowy
+        </button>
+        <button id="tabSearch" onclick="switchTab('search')" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition">
+          🔍 Pojedynczy Produkt
+        </button>
+      </div>
+
+      <!-- Basket View -->
+      <div id="basketView">
+        <label for="basketInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+          Wpisz lub wklej listę produktów (rozdzielone przecinkami lub nową linią):
+        </label>
+        <textarea id="basketInput" rows="3" class="w-full p-4 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition text-base text-slate-900 font-medium" placeholder="np. 2x masło, 1kg kurczaka, kawa ziarnista, banany, mleko"></textarea>
+
+        <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center space-x-1.5 text-xs text-slate-500">
+            <span>💡 Szybki przykład:</span>
+            <button onclick="setSample('2x masło, mleko, banany, kawa ziarnista')" class="text-emerald-600 hover:underline font-medium">Podstawowy</button>
+            <span>•</span>
+            <button onclick="setSample('filet z kurczaka, schab, 10 jajek, olej')" class="text-emerald-600 hover:underline font-medium">Obiadowy</button>
+          </div>
+          <button id="btnCompare" onclick="runBasketCompare()" class="w-full sm:w-auto px-7 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center justify-center space-x-2">
+            <span>Porównaj Koszyk</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search View -->
+      <div id="searchView" class="hidden">
+        <label for="searchInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+          Wpisz nazwę szukanego produktu:
+        </label>
+        <div class="flex gap-2">
+          <input id="searchInput" type="text" onkeydown="if(event.key==='Enter') runProductSearch()" class="flex-1 p-3.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-base font-medium" placeholder="np. masło ekstra, kawa ziarnista, banany, kurczak">
+          <button onclick="runProductSearch()" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-md transition">
+            Szukaj
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Spinner -->
+    <div id="loading" class="hidden text-center py-12">
+      <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-emerald-600 border-t-transparent"></div>
+      <p class="mt-3 text-slate-600 font-medium text-sm">Agent analizuje aktualne gazetki...</p>
+    </div>
+
+    <!-- Results Area -->
+    <div id="resultsArea" class="space-y-6"></div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-auto py-6">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
+      <p class="font-semibold text-slate-700">🛒 GazetkoAgent - Napędzany przez Mac mini M2 Server</p>
+      <p>Ceny i promocje pobierane i weryfikowane automatycznie każdego ranka.</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentTab = 'basket';
+    const API_BASE = window.location.origin; // automatycznie używa adresu serwera
+
+    function switchTab(tab) {
+      currentTab = tab;
+      const bView = document.getElementById('basketView');
+      const sView = document.getElementById('searchView');
+      const tBasket = document.getElementById('tabBasket');
+      const tSearch = document.getElementById('tabSearch');
+
+      if (tab === 'basket') {
+        bView.classList.remove('hidden');
+        sView.classList.add('hidden');
+        tBasket.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white transition shadow-sm font-semibold";
+        tSearch.className = "px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition font-semibold";
+      } else {
+        bView.classList.add('hidden');
+        sView.classList.remove('hidden');
+        tSearch.className = "px-4 py-2 rounded-xl bg-emerald-600 text-white transition shadow-sm font-semibold";
+        tBasket.className = "px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition font-semibold";
+      }
+      document.getElementById('resultsArea').innerHTML = '';
+    }
+
+    function setSample(text) {
+      document.getElementById('basketInput').value = text;
+      runBasketCompare();
+    }
+
+    async function runBasketCompare() {
+      const query = document.getElementById('basketInput').value.trim();
+      if (!query) return;
+
+      const loading = document.getElementById('loading');
+      const resultsArea = document.getElementById('resultsArea');
+      loading.classList.remove('hidden');
+      resultsArea.innerHTML = '';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/basket`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query })
+        });
+        const data = await res.json();
+        loading.classList.add('hidden');
+
+        if (!res.ok) {
+          resultsArea.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200">${data.detail || 'Wystąpił błąd'}</div>`;
+          return;
+        }
+
+        renderBasketResults(data);
+      } catch (err) {
+        loading.classList.add('hidden');
+        resultsArea.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200">Nie udało się połączyć z API: ${err.message}</div>`;
+      }
+    }
+
+    function renderBasketResults(data) {
+      const resultsArea = document.getElementById('resultsArea');
+      const best = data.best_store;
+      
+      let storeCardsHtml = '';
+      data.store_summaries.forEach((s) => {
+        const isWinner = s.store === best;
+        const borderStyle = isWinner ? 'border-2 border-emerald-500 bg-emerald-50/30' : 'border border-slate-200 bg-white';
+        const winnerBadge = isWinner ? '<span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-emerald-600 text-white shadow-sm">🏆 NAJTAŃSZY SKLEP</span>' : '';
+        
+        let dealsList = s.matched_deals.map(d => {
+          if (!d.found) {
+            return `<li class="flex justify-between py-1.5 text-xs text-slate-400 border-b border-slate-100"><span>${d.requested_query}</span><span class="italic">Brak w gazetce</span></li>`;
+          }
+          const cond = d.matched_deal.conditions ? `<span class="block text-[11px] text-amber-600 font-medium">⚠️ ${d.matched_deal.conditions}</span>` : '';
+          return `
+            <li class="py-2 border-b border-slate-100 last:border-0">
+              <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-800">
+                <span>${d.matched_deal.name}</span>
+                <span class="text-emerald-700">${d.calculated_price.toFixed(2)} zł</span>
+              </div>
+              ${cond}
+            </li>
+          `;
+        }).join('');
+
+        storeCardsHtml += `
+          <div class="rounded-2xl p-5 ${borderStyle} shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-slate-900">${s.store}</h3>
+                ${winnerBadge}
+              </div>
+              <div class="mb-4">
+                <span class="text-3xl font-extrabold text-slate-900">${s.total_cost.toFixed(2)} zł</span>
+                <span class="text-xs text-emerald-700 font-semibold block mt-0.5">Oszczędzasz ok. ${s.savings_vs_regular.toFixed(2)} zł</span>
+              </div>
+              <ul class="space-y-1 mb-4">
+                ${dealsList}
+              </ul>
+            </div>
+            <div class="pt-3 border-t border-slate-200/60 text-xs text-slate-500 font-medium">
+              Skompletowano pozycji: ${s.items_found}/${s.items_total}
+            </div>
+          </div>
+        `;
+      });
+
+      resultsArea.innerHTML = `
+        <!-- Winner Banner -->
+        <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-6 shadow-lg">
+          <div class="flex items-center space-x-3">
+            <span class="text-4xl">💡</span>
+            <div>
+              <h3 class="text-xl font-bold">Rekomendacja Agenta</h3>
+              <p class="text-emerald-100 text-sm mt-1 whitespace-pre-line">${data.recommendation}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Store Comparison Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          ${storeCardsHtml}
+        </div>
+      `;
+    }
+
+    async function runProductSearch() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (!query) return;
+
+      const loading = document.getElementById('loading');
+      const resultsArea = document.getElementById('resultsArea');
+      loading.classList.remove('hidden');
+      resultsArea.innerHTML = '';
+
+      try {
+        const res = await fetch(`${API_BASE}/api/search?q=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        loading.classList.add('hidden');
+
+        if (!data.deals || data.deals.length === 0) {
+          resultsArea.innerHTML = `<div class="p-6 bg-amber-50 text-amber-800 rounded-2xl border border-amber-200 text-center font-medium">Nie znaleziono aktualnych promocji dla zapytania: "${query}".</div>`;
+          return;
+        }
+
+        let dealsHtml = data.deals.map((d, index) => {
+          const discountTag = d.discount_percent ? `<span class="px-2 py-0.5 bg-red-100 text-red-700 text-xs font-bold rounded-md">-${Math.round(d.discount_percent)}%</span>` : '';
+          const regularPrice = d.regular_price ? `<span class="text-xs text-slate-400 line-through mr-1">${d.regular_price.toFixed(2)} zł</span>` : '';
+          const conditionTag = d.conditions ? `<div class="mt-2 text-xs text-amber-700 bg-amber-50 p-2 rounded-lg font-medium">⚠️ ${d.conditions}</div>` : '';
+          const winnerTag = index === 0 ? '<span class="px-2 py-0.5 bg-emerald-600 text-white text-xs font-bold rounded-md ml-2">🏆 NAJTAŃSZA OFERTA</span>' : '';
+
+          return `
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+              <div class="flex justify-between items-start">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-500">${d.store}</span>
+                  ${winnerTag}
+                  <h4 class="text-base font-bold text-slate-900 mt-1">${d.name}</h4>
+                  <span class="text-xs text-slate-500">${d.category || 'Ogólne'}</span>
+                </div>
+                <div class="text-right">
+                  <div>
+                    ${regularPrice}
+                    <span class="text-2xl font-extrabold text-emerald-600">${d.promo_price.toFixed(2)} zł</span>
+                  </div>
+                  ${discountTag}
+                </div>
+              </div>
+              ${conditionTag}
+            </div>
+          `;
+        }).join('');
+
+        resultsArea.innerHTML = `
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-slate-900">Wyniki wyszukiwania (${data.results_count})</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            ${dealsHtml}
+          </div>
+        `;
+      } catch (err) {
+        loading.classList.add('hidden');
+        resultsArea.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200">Błąd: ${err.message}</div>`;
+      }
+    }
+  </script>
+</body>
+</html>

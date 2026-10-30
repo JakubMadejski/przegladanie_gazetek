@@ -132,3 +132,4 @@ def detect_conditions(text: str) -> Optional[str]:
             conditions.append(f"limit: {match.group(1)}")
 
     return ", ".join(conditions) if conditions else None
+

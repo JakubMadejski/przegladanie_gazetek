@@ -27,3 +27,4 @@ class BaseScraper(ABC):
             deals = self.fetch_deals_for_leaflet(l)
             all_deals.extend(deals)
         return leaflets, all_deals
+

@@ -65,3 +65,4 @@ STORE_METADATA = {
         website="https://www.kaufland.pl"
     ),
 }
+

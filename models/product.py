@@ -56,3 +56,4 @@ class CustomerBasketComparison(BaseModel):
     lowest_total: Optional[float] = None
     store_summaries: List[StoreBasketSummary]
     recommendation: str
+
