@@ -182,20 +182,17 @@ class DealHunterAgent:
             runner_up = sorted_all[1] if len(sorted_all) > 1 else None
             diff = round(runner_up.total_cost - best_store_summary.total_cost, 2) if runner_up else 0.0
             
-            store_meta = STORE_METADATA.get(best_store_name)
-            emoji = store_meta.logo_emoji if store_meta else "🛒"
-
             rec_parts = [
-                f"{emoji} **Najbardziej opłaca się zrobić zakupy w sieci {best_store_name.value}!**",
+                f"**Najbardziej opłaca się zrobić zakupy w sieci {best_store_name.value}!**",
                 f"Łączny koszt Twojego koszyka wyniesie: **{lowest_total:.2f} zł** (oszczędzasz ok. {best_store_summary.savings_vs_regular:.2f} zł w stosunku do cen regularnych)."
             ]
             if runner_up and diff > 0:
-                rec_parts.append(f"W {runner_up.store.value} ten sam koszyk kosztowałby **{runner_up.total_cost:.2f} zł** (o {diff:.2f} zł drożej).")
+                rec_parts.append(f"W sieci {runner_up.store.value} ten sam koszyk kosztowałby **{runner_up.total_cost:.2f} zł** (o {diff:.2f} zł drożej).")
 
             if best_store_summary.conditions_summary:
                 rec_parts.append("\n⚠️ **Pamiętaj o warunkach promocyjnych:**")
-                for c in best_store_summary.conditions_summary[:3]:
-                    rec_parts.append(f"  • {c}")
+                for c in best_store_summary.conditions_summary[:4]:
+                    rec_parts.append(f"• {c}")
 
             recommendation = "\n".join(rec_parts)
         else:

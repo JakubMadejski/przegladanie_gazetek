@@ -9,29 +9,55 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      background-image: 
+        radial-gradient(#e2e8f0 1.2px, transparent 1.2px),
+        radial-gradient(ellipse at 50% 0%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(14, 165, 233, 0.04) 0%, transparent 50%);
+      background-size: 24px 24px, 100% 100%, 100% 100%;
+      background-repeat: repeat, no-repeat, no-repeat;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+<body class="text-slate-800 min-h-screen flex flex-col antialiased">
 
   <!-- Header -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
     <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center space-x-3 cursor-pointer" onclick="location.reload()">
         <span class="text-3xl">🛒</span>
         <div>
           <h1 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">GazetkoAgent</h1>
-          <p class="text-xs text-slate-500 font-medium">Inteligentny Asystent Zakupowy AI</p>
+          <p class="text-xs text-slate-500 font-medium">Porównywarka cen i promocji z gazetek</p>
         </div>
       </div>
-      <div class="flex items-center space-x-1.5 text-xs font-semibold overflow-x-auto py-1">
-        <span class="px-2 py-0.5 bg-green-50 text-green-800 rounded-full border border-green-300 whitespace-nowrap">🐸 Żabka</span>
-        <span class="px-2 py-0.5 bg-red-50 text-red-700 rounded-full border border-red-200 whitespace-nowrap">🐞 Biedronka</span>
-        <span class="px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full border border-blue-200 whitespace-nowrap">🟡 Lidl</span>
-        <span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200 whitespace-nowrap">🐦 Auchan</span>
-        <span class="px-2 py-0.5 bg-amber-50 text-amber-800 rounded-full border border-amber-200 whitespace-nowrap">🦖 Dino</span>
-        <span class="px-2 py-0.5 bg-rose-50 text-rose-800 rounded-full border border-rose-200 whitespace-nowrap">🔴 Kaufland</span>
-        <span class="px-2 py-0.5 bg-sky-50 text-sky-800 rounded-full border border-sky-200 whitespace-nowrap">🟦 Carrefour</span>
+      
+      <!-- Sklepy: czytelne, profesjonalne etykiety z kropkami brandowymi -->
+      <div class="flex items-center space-x-1.5 overflow-x-auto py-1">
+        <span class="text-xs text-slate-400 font-medium mr-1 hidden lg:inline">Sieci:</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-600 mr-1.5"></span>Biedronka
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1.5"></span>Lidl
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-600 mr-1.5"></span>Żabka
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-600 mr-1.5"></span>Dino
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-rose-600 mr-1.5"></span>Kaufland
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1.5"></span>Auchan
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200/80 whitespace-nowrap">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mr-1.5"></span>Carrefour
+        </span>
       </div>
     </div>
   </header>
@@ -44,7 +70,7 @@
         Gdzie Twoje zakupy wyjdą <span class="text-emerald-600">najtaniej?</span>
       </h2>
       <p class="mt-2 text-slate-600 text-sm sm:text-base">
-        Wyszukaj produkt (np. <i>energetyki</i>, <i>kawa</i>, <i>masło</i>) lub wklej całą listę zakupów. Agent błyskawicznie porówna ceny w Biedronce, Lidlu i Auchan!
+        Wyszukaj produkt (np. <i>energetyki</i>, <i>kawa</i>, <i>masło</i>) lub wklej całą listę zakupów. Błyskawicznie porównaj ceny w 7 sieciach handlowych!
       </p>
     </div>
 
@@ -124,7 +150,7 @@
     <!-- Spinner -->
     <div id="loading" class="hidden text-center py-12">
       <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-emerald-600 border-t-transparent"></div>
-      <p class="mt-3 text-slate-600 font-medium text-sm">Agent przeszukuje oferty we wszystkich sklepach...</p>
+      <p class="mt-3 text-slate-600 font-medium text-sm">Przeszukiwanie aktualnych ofert we wszystkich 7 sklepach...</p>
     </div>
 
     <!-- Results Area -->
@@ -133,10 +159,25 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 mt-auto py-6">
-    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
-      <p class="font-semibold text-slate-700">🛒 GazetkoAgent - Biedronka • Lidl • Auchan</p>
-      <p>Ceny promocyjne aktualizowane codziennie o 06:00 rano.</p>
+  <footer class="bg-white/90 backdrop-blur-sm border-t border-slate-200 mt-auto py-8">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500 space-y-2">
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-semibold text-slate-700">
+        <span>Biedronka</span>
+        <span class="text-slate-300">•</span>
+        <span>Lidl</span>
+        <span class="text-slate-300">•</span>
+        <span>Żabka</span>
+        <span class="text-slate-300">•</span>
+        <span>Dino</span>
+        <span class="text-slate-300">•</span>
+        <span>Kaufland</span>
+        <span class="text-slate-300">•</span>
+        <span>Auchan</span>
+        <span class="text-slate-300">•</span>
+        <span>Carrefour</span>
+      </div>
+      <p class="text-slate-500">Porównywarka aktualnych promocji i cen ze skanowanych gazetek handlowych. Baza odświeżana codziennie rano.</p>
+      <p class="text-[11px] text-slate-400">Wszystkie nazwy handlowe i znaki towarowe należą do ich prawnych właścicieli i zostały użyte wyłącznie informacyjnie.</p>
     </div>
   </footer>
 
@@ -381,6 +422,20 @@
       }
     }
 
+    function formatMarkdown(text) {
+      if (!text) return '';
+      let formatted = text.replace(/\*\*(.+?)\*\*/g, '<strong class="font-extrabold text-white tracking-wide">$1</strong>');
+      formatted = formatted.replace(/\*(.+?)\*/g, '<em class="italic text-emerald-100">$1</em>');
+      return formatted.split('\n').map(line => {
+        const trimmed = line.trim();
+        if (trimmed.startsWith('•')) {
+          return `<div class="flex items-start space-x-2 mt-1.5 pl-1"><span class="text-amber-300 font-bold">•</span><span class="text-white/95">${trimmed.substring(1).trim()}</span></div>`;
+        }
+        if (trimmed === '') return '<div class="h-2"></div>';
+        return `<div>${line}</div>`;
+      }).join('');
+    }
+
     function renderBasketResults(data) {
       const resultsArea = document.getElementById('resultsArea');
       const best = data.best_store;
@@ -435,12 +490,16 @@
 
       resultsArea.innerHTML = `
         <!-- Winner Banner -->
-        <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-6 shadow-lg">
-          <div class="flex items-center space-x-3">
-            <span class="text-4xl">💡</span>
-            <div>
-              <h3 class="text-xl font-bold">Rekomendacja Agenta</h3>
-              <p class="text-emerald-100 text-sm mt-1 whitespace-pre-line">${data.recommendation}</p>
+        <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-6 shadow-lg border border-emerald-500/20">
+          <div class="flex items-start space-x-3.5">
+            <div class="w-11 h-11 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-2xl shadow-inner">
+              🎯
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-bold text-white mb-2">Najlepsza oferta dla Twojego koszyka</h3>
+              <div class="text-emerald-50 text-sm leading-relaxed">
+                ${formatMarkdown(data.recommendation)}
+              </div>
             </div>
           </div>
         </div>

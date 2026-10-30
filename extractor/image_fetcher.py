@@ -98,3 +98,4 @@ def get_product_image_url(product_name: str, category: Optional[str] = None) -> 
         return DEFAULT_CATEGORY_FALLBACK[category]
 
     return "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&auto=format&fit=crop&q=80"
+
