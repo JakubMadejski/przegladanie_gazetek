@@ -23,6 +23,7 @@ class ProductDeal(BaseModel):
     page_number: Optional[int] = None
     image_url: Optional[str] = None
     raw_text: Optional[str] = None
+    is_promo: bool = Field(default=True, description="True = promocja z gazetki, False = stała cena bazowa z półki")
 
 
 class BasketItemRequest(BaseModel):

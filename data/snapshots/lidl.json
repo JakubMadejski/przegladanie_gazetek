@@ -226,6 +226,51 @@
       "category": "Chemia i kosmetyki"
     },
     {
+      "id": "lidl_wodka_zubrowka",
+      "name": "Wódka Żubrówka Biała 40% 500ml",
+      "promo_price": 25.99,
+      "regular_price": 31.99,
+      "conditions": "z kuponem w aplikacji Lidl Plus",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "lidl_wodka_bocian",
+      "name": "Wódka Biały Bocian 40% 500ml",
+      "promo_price": 28.49,
+      "regular_price": 34.99,
+      "conditions": "supercena",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "lidl_wodka_soplica",
+      "name": "Wódka Soplica Szlachetna 40% 500ml",
+      "promo_price": 26.99,
+      "regular_price": 32.99,
+      "conditions": "przy zakupie 2 butelek",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "lidl_wodka_krupnik",
+      "name": "Wódka Krupnik Premium 40% 500ml",
+      "promo_price": 24.99,
+      "regular_price": 29.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "lidl_wodka_finlandia",
+      "name": "Wódka Finlandia Vodka 40% 700ml",
+      "promo_price": 48.99,
+      "regular_price": 63.99,
+      "conditions": "z kuponem Lidl Plus",
+      "unit_info": "700ml",
+      "category": "Alkohole"
+    },
+    {
       "id": "lidl_ser_gouda",
       "name": "Ser Gouda w plastrach Pilos XXL 500g",
       "promo_price": 9.99,

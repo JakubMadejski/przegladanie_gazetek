@@ -226,6 +226,51 @@
       "category": "Chemia i kosmetyki"
     },
     {
+      "id": "bie_wodka_zubrowka",
+      "name": "Wódka Żubrówka Biała 40% 500ml",
+      "promo_price": 26.99,
+      "regular_price": 31.99,
+      "conditions": "z aplikacją Moja Biedronka przy zakupie 2 butelek",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "bie_wodka_bocian",
+      "name": "Wódka Biały Bocian 40% 500ml",
+      "promo_price": 28.99,
+      "regular_price": 34.99,
+      "conditions": "supercena tygodnia",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "bie_wodka_soplica",
+      "name": "Wódka Soplica Szlachetna 40% 500ml",
+      "promo_price": 27.49,
+      "regular_price": 32.99,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "bie_wodka_finlandia",
+      "name": "Wódka Finlandia 40% 700ml butelka",
+      "promo_price": 49.99,
+      "regular_price": 64.99,
+      "conditions": "okazja cenowa",
+      "unit_info": "700ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "bie_wodka_wyborowa",
+      "name": "Wódka Wyborowa z polskich ziaren żyta 40% 500ml",
+      "promo_price": 28.49,
+      "regular_price": 33.99,
+      "conditions": "z kartą Moja Biedronka",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
       "id": "bie_ser_gouda",
       "name": "Ser Gouda w plastrach Światowid 400g",
       "promo_price": 8.99,

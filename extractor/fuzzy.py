@@ -88,3 +88,4 @@ def correct_query_typos(query: str, vocabulary: Iterable[str]) -> Tuple[str, boo
             corrected_words.append(w)
 
     return " ".join(corrected_words), has_corrections
+

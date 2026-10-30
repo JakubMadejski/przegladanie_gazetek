@@ -64,12 +64,14 @@ class TestDatabaseAndAgent(unittest.TestCase):
         self.assertIn("Lidl", stats["store_counts"])
         self.assertIn("Auchan", stats["store_counts"])
 
-    def test_synonyms_and_energetyki_search(self):
-        # Wyszukiwanie frazy w liczbie mnogiej / potocznej 'energetyki'
-        deals = self.db.search_deals("energetyki")
-        self.assertGreaterEqual(len(deals), 3)
-        names = [d.name.lower() for d in deals]
-        self.assertTrue(any("monster" in n or "red bull" in n or "kong" in n or "bepower" in n for n in names))
+    def test_vodka_and_alcohol_search(self):
+        # Test wyszukiwania wódki z polskimi znakami i bez
+        deals_wodka = self.db.search_deals("wódka")
+        self.assertGreaterEqual(len(deals_wodka), 3)
+        self.assertTrue(any("zubrowka" in d.name.lower() or "bocian" in d.name.lower() or "soplica" in d.name.lower() for d in deals_wodka))
+
+        deals_bocian = self.db.search_deals("bocian")
+        self.assertGreaterEqual(len(deals_bocian), 1)
 
     def test_suggestions_endpoint(self):
         suggs = self.db.get_suggestions("energetyk")

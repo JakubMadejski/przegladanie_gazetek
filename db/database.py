@@ -86,9 +86,15 @@ class Database:
                     page_number INTEGER,
                     image_url TEXT,
                     raw_text TEXT,
+                    is_promo INTEGER DEFAULT 1,
                     FOREIGN KEY (leaflet_id) REFERENCES leaflets(id) ON DELETE CASCADE
                 )
             """)
+
+            try:
+                cur.execute("ALTER TABLE product_deals ADD COLUMN is_promo INTEGER DEFAULT 1")
+            except Exception:
+                pass
 
             cur.execute("CREATE INDEX IF NOT EXISTS idx_deals_store ON product_deals(store)")
             cur.execute("CREATE INDEX IF NOT EXISTS idx_deals_normalized ON product_deals(normalized_name)")
@@ -140,8 +146,8 @@ class Database:
                         id, leaflet_id, store, name, normalized_name, category,
                         brand, promo_price, regular_price, discount_percent,
                         unit, unit_price, conditions, valid_from, valid_to,
-                        page_number, image_url, raw_text
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        page_number, image_url, raw_text, is_promo
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     deal.id,
                     deal.leaflet_id,
@@ -160,7 +166,8 @@ class Database:
                     deal.valid_to.isoformat() if deal.valid_to else None,
                     deal.page_number,
                     deal.image_url,
-                    deal.raw_text
+                    deal.raw_text,
+                    1 if deal.is_promo else 0
                 ))
 
                 cur.execute("DELETE FROM deals_fts WHERE id = ?", (deal.id,))
@@ -385,4 +392,5 @@ class Database:
             page_number=r["page_number"],
             image_url=r["image_url"],
             raw_text=r["raw_text"],
+            is_promo=bool(r["is_promo"]) if "is_promo" in r.keys() else True,
         )

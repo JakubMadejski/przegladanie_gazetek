@@ -47,12 +47,13 @@
     <!-- Quick Category Badges -->
     <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
       <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider mr-1">Popularne:</span>
+      <button onclick="quickSearch('wódka')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🍸 Wódka</button>
       <button onclick="quickSearch('energetyki')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">⚡ Energetyki</button>
       <button onclick="quickSearch('masło')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🧈 Masło</button>
       <button onclick="quickSearch('kawa ziarnista')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">☕ Kawa</button>
       <button onclick="quickSearch('kurczak')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🍗 Kurczak</button>
-      <button onclick="quickSearch('banany')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🍌 Banany</button>
       <button onclick="quickSearch('piwo')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🍺 Piwo</button>
+      <button onclick="quickSearch('banany')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🍌 Banany</button>
       <button onclick="quickSearch('jaja')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🥚 Jajka</button>
       <button onclick="quickSearch('chipsy')" class="px-3 py-1 bg-white hover:bg-emerald-50 hover:text-emerald-700 border border-slate-200 rounded-full text-xs font-semibold transition shadow-sm">🥔 Chipsy</button>
     </div>
@@ -63,7 +64,7 @@
       <!-- Tabs -->
       <div class="flex space-x-2 border-b border-slate-100 pb-4 mb-4 text-sm font-semibold">
         <button id="tabSearch" onclick="switchTab('search')" class="px-4 py-2 rounded-xl bg-emerald-600 text-white transition shadow-sm">
-          🔍 Szukaj Produktu / Energetyków
+          🔍 Szukaj Produktu
         </button>
         <button id="tabBasket" onclick="switchTab('basket')" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 transition">
           🧺 Porównaj Cały Koszyk
@@ -73,7 +74,7 @@
       <!-- Search View (with live suggestions) -->
       <div id="searchView" class="relative">
         <label for="searchInput" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-          Wpisz nazwę szukanego produktu (np. energetyki, monster, masło, kawa):
+          Wpisz nazwę szukanego produktu (np. wódka, masło, kawa, kurczak, energetyki):
         </label>
         <div class="flex gap-2">
           <div class="relative flex-1">
@@ -81,7 +82,7 @@
                    oninput="handleSearchInput(this.value)"
                    onkeydown="if(event.key==='Enter') runProductSearch()" 
                    class="w-full p-3.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-base font-medium" 
-                   placeholder="Zacznij pisać: np. energetyki, masło, kawa, chipsy...">
+                   placeholder="np. wódka żubrówka, bocian, masło ekstra, kawa ziarnista...">
             
             <!-- Live Suggestions Dropdown -->
             <div id="suggestionsDropdown" class="hidden absolute left-0 right-0 top-full mt-1.5 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 overflow-hidden max-h-72 overflow-y-auto"></div>
@@ -277,13 +278,17 @@
           const regularPrice = d.regular_price ? `<span class="text-xs text-slate-400 line-through mr-1">${d.regular_price.toFixed(2)} zł</span>` : '';
           const conditionTag = d.conditions ? `<div class="mt-2 text-xs text-amber-700 bg-amber-50 p-2 rounded-lg font-medium">⚠️ ${d.conditions}</div>` : '';
           const winnerTag = index === 0 ? '<span class="px-2 py-0.5 bg-emerald-600 text-white text-xs font-bold rounded-md ml-2">🏆 NAJTAŃSZA OFERTA</span>' : '';
+          const promoBadge = d.is_promo ? '<span class="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-bold rounded-md ml-2">🔥 Promocja z gazetki</span>' : '<span class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-medium rounded-md ml-2">Cena stała</span>';
 
           return `
             <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
               <div class="flex justify-between items-start">
                 <div>
-                  <span class="text-xs font-bold uppercase tracking-wider ${d.store === 'Biedronka' ? 'text-red-600' : (d.store === 'Lidl' ? 'text-blue-600' : 'text-emerald-600')}">${d.store}</span>
-                  ${winnerTag}
+                  <div class="flex items-center">
+                    <span class="text-xs font-bold uppercase tracking-wider ${d.store === 'Biedronka' ? 'text-red-600' : (d.store === 'Lidl' ? 'text-blue-600' : 'text-emerald-600')}">${d.store}</span>
+                    ${promoBadge}
+                    ${winnerTag}
+                  </div>
                   <h4 class="text-base font-bold text-slate-900 mt-1">${d.name}</h4>
                   <span class="text-xs text-slate-500">${d.category || 'Ogólne'}</span>
                 </div>
