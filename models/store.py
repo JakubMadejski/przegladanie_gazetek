@@ -7,9 +7,14 @@ class StoreName(str, Enum):
     BIEDRONKA = "Biedronka"
     LIDL = "Lidl"
     AUCHAN = "Auchan"
+    ZABKA = "Żabka"
     DINO = "Dino"
-    CARREFOUR = "Carrefour"
     KAUFLAND = "Kaufland"
+    CARREFOUR = "Carrefour"
+    NETTO = "Netto"
+    ALDI = "Aldi"
+    STOKROTKA = "Stokrotka"
+    POLOMARKET = "POLOmarket"
     OTHER = "Inny"
 
 
@@ -43,19 +48,19 @@ STORE_METADATA = {
         loyalty_card_name="Skarbonka",
         website="https://www.auchan.pl"
     ),
+    StoreName.ZABKA: StoreInfo(
+        name=StoreName.ZABKA,
+        display_name="Żabka",
+        logo_emoji="🐸",
+        loyalty_card_name="Żappka",
+        website="https://www.zabka.pl"
+    ),
     StoreName.DINO: StoreInfo(
         name=StoreName.DINO,
         display_name="Dino",
         logo_emoji="🦖",
         loyalty_card_name=None,
         website="https://marketdino.pl"
-    ),
-    StoreName.CARREFOUR: StoreInfo(
-        name=StoreName.CARREFOUR,
-        display_name="Carrefour",
-        logo_emoji="🟦",
-        loyalty_card_name="Mój Carrefour",
-        website="https://www.carrefour.pl"
     ),
     StoreName.KAUFLAND: StoreInfo(
         name=StoreName.KAUFLAND,
@@ -64,5 +69,39 @@ STORE_METADATA = {
         loyalty_card_name="Kaufland Card",
         website="https://www.kaufland.pl"
     ),
+    StoreName.CARREFOUR: StoreInfo(
+        name=StoreName.CARREFOUR,
+        display_name="Carrefour",
+        logo_emoji="🟦",
+        loyalty_card_name="Mój Carrefour",
+        website="https://www.carrefour.pl"
+    ),
+    StoreName.NETTO: StoreInfo(
+        name=StoreName.NETTO,
+        display_name="Netto",
+        logo_emoji="🐶",
+        loyalty_card_name="Netto+",
+        website="https://netto.pl"
+    ),
+    StoreName.ALDI: StoreInfo(
+        name=StoreName.ALDI,
+        display_name="Aldi",
+        logo_emoji="🔵",
+        loyalty_card_name=None,
+        website="https://www.aldi.pl"
+    ),
+    StoreName.STOKROTKA: StoreInfo(
+        name=StoreName.STOKROTKA,
+        display_name="Stokrotka",
+        logo_emoji="🌼",
+        loyalty_card_name="Nasza Stokrotka",
+        website="https://stokrotka.pl"
+    ),
+    StoreName.POLOMARKET: StoreInfo(
+        name=StoreName.POLOMARKET,
+        display_name="POLOmarket",
+        logo_emoji="🟣",
+        loyalty_card_name="PoloKarta",
+        website="https://polomarket.pl"
+    ),
 }
-

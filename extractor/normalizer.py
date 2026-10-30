@@ -102,13 +102,19 @@ def detect_conditions(text: str) -> Optional[str]:
     norm = strip_accents(text)
     conditions = []
 
-    if "aplikacj" in norm or "karta" in norm or "moja biedronka" in norm or "lidl plus" in norm or "skarbonka" in norm:
+    if "aplikacj" in norm or "karta" in norm or "moja biedronka" in norm or "lidl plus" in norm or "skarbonka" in norm or "zappka" in norm or "żappka" in norm or "kaufland" in norm or "carrefour" in norm:
         if "moja biedronka" in norm:
             conditions.append("z aplikacją Moja Biedronka")
         elif "lidl plus" in norm:
             conditions.append("z aplikacją Lidl Plus")
         elif "skarbonka" in norm:
             conditions.append("z kartą Skarbonka Auchan")
+        elif "zappka" in norm or "żappka" in norm:
+            conditions.append("z aplikacją żappka")
+        elif "kaufland" in norm:
+            conditions.append("z Kaufland Card")
+        elif "carrefour" in norm:
+            conditions.append("z aplikacją Mój Carrefour")
         else:
             conditions.append("wymagana aplikacja / karta lojalnościowa")
 

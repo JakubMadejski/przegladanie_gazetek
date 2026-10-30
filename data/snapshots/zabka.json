@@ -1,0 +1,229 @@
+{
+  "leaflet": {
+    "id": "zabka_gazetka_aktualna",
+    "store": "Żabka",
+    "title": "Żabka - Najlepsze Okazje i Promocje z Żappką",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://www.zabka.pl",
+    "pages_count": 24
+  },
+  "deals": [
+    {
+      "id": "zab_wodka_zubrowka",
+      "name": "Wódka Żubrówka Biała 40% 500ml",
+      "promo_price": 26.99,
+      "regular_price": 32.99,
+      "conditions": "z aplikacją żappka przy zakupie 2 butelek",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_wodka_bocian",
+      "name": "Wódka Biały Bocian 40% 500ml",
+      "promo_price": 29.99,
+      "regular_price": 35.99,
+      "conditions": "supercena z żappką",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_wodka_soplica",
+      "name": "Wódka Soplica Szlachetna 40% 500ml",
+      "promo_price": 28.49,
+      "regular_price": 33.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_wodka_krupnik",
+      "name": "Wódka Krupnik Premium 40% 500ml",
+      "promo_price": 25.99,
+      "regular_price": 31.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_wodka_wyborowa",
+      "name": "Wódka Wyborowa 40% 500ml",
+      "promo_price": 28.99,
+      "regular_price": 34.99,
+      "conditions": "wielosztuki 1+1 taniej",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_wodka_finlandia",
+      "name": "Wódka Finlandia Vodka 40% 700ml",
+      "promo_price": 52.99,
+      "regular_price": 66.99,
+      "conditions": "supercena",
+      "unit_info": "700ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_monster_energy",
+      "name": "Napój energetyczny Monster Energy 500ml puszka",
+      "promo_price": 5.49,
+      "regular_price": 7.49,
+      "conditions": "przy zakupie 2 puszek z aplikacją żappka",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.99,
+      "regular_price": 7.69,
+      "conditions": "drugi 50% taniej z żappką",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_tiger_energy",
+      "name": "Napój energetyzujący Tiger Energy Drink 250ml",
+      "promo_price": 2.99,
+      "regular_price": 4.19,
+      "conditions": "wielosztuka 2 w cenie 1",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_level_up",
+      "name": "Napój energetyczny Level Up 250ml puszka",
+      "promo_price": 2.29,
+      "regular_price": 3.19,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_hot_dog",
+      "name": "Hot Dog klasyczny z parówką i sosem Żabka",
+      "promo_price": 5.99,
+      "regular_price": 7.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "szt.",
+      "category": "Podstawowe produkty"
+    },
+    {
+      "id": "zab_chipsy_lays",
+      "name": "Chipsy Lay's Solone / Papryka / Fromage 130g",
+      "promo_price": 5.99,
+      "regular_price": 7.99,
+      "conditions": "przy zakupie 2 paczek",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "zab_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.69,
+      "regular_price": 4.89,
+      "conditions": "w 4-paku z aplikacją żappka",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_piwo_tyskie",
+      "name": "Piwo Tyskie Gronie 500ml puszka",
+      "promo_price": 3.49,
+      "regular_price": 4.69,
+      "conditions": "przy zakupie 4 puszek",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "zab_maslo_ekstra",
+      "name": "Masło Ekstra 82% 200g Polskie Mlekovita",
+      "promo_price": 5.49,
+      "regular_price": 7.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "zab_mleko_uht",
+      "name": "Mleko UHT Łaciate 3.2% 1l",
+      "promo_price": 3.49,
+      "regular_price": 4.49,
+      "conditions": "okazja cenowa",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "zab_kawa_lavazza",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 59.99,
+      "regular_price": 82.99,
+      "conditions": "supercena",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_kawa_cafe",
+      "name": "Kawa z ekspresu Żabka Cafe duża 200ml",
+      "promo_price": 4.99,
+      "regular_price": 6.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "200ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_kurczak_filet",
+      "name": "Świeży filet z piersi kurczaka na tacki 1kg",
+      "promo_price": 19.99,
+      "regular_price": 25.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "zab_banany",
+      "name": "Banany świeże na wagę",
+      "promo_price": 4.49,
+      "regular_price": 6.99,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "zab_jaja_klasa_m",
+      "name": "Jaja ściółkowe klasa M 10 sztuk",
+      "promo_price": 8.49,
+      "regular_price": 10.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "10 szt",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "zab_coca_cola",
+      "name": "Napój gazowany Coca-Cola 1.5l butelka",
+      "promo_price": 7.49,
+      "regular_price": 9.49,
+      "conditions": "w 2-paku",
+      "unit_info": "1.5l",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "zab_czekolada_milka",
+      "name": "Czekolada Milka alpejska różne smaki 100g",
+      "promo_price": 4.49,
+      "regular_price": 5.99,
+      "conditions": "drugi produkt 40% taniej",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "zab_ser_gouda",
+      "name": "Ser Gouda w plastrach 150g",
+      "promo_price": 5.49,
+      "regular_price": 6.99,
+      "conditions": "z aplikacją żappka",
+      "unit_info": "150g",
+      "category": "Nabiał i jaja"
+    }
+  ]
+}

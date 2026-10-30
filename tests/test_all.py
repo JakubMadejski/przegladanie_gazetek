@@ -58,11 +58,15 @@ class TestDatabaseAndAgent(unittest.TestCase):
 
     def test_database_stats(self):
         stats = self.db.get_stats()
-        self.assertEqual(stats["leaflets_count"], 3)
-        self.assertGreaterEqual(stats["deals_count"], 75)
+        self.assertGreaterEqual(stats["leaflets_count"], 7)
+        self.assertGreaterEqual(stats["deals_count"], 150)
         self.assertIn("Biedronka", stats["store_counts"])
         self.assertIn("Lidl", stats["store_counts"])
         self.assertIn("Auchan", stats["store_counts"])
+        self.assertIn("Żabka", stats["store_counts"])
+        self.assertIn("Dino", stats["store_counts"])
+        self.assertIn("Kaufland", stats["store_counts"])
+        self.assertIn("Carrefour", stats["store_counts"])
 
     def test_vodka_and_alcohol_search(self):
         # Test wyszukiwania wódki z polskimi znakami i bez
@@ -108,9 +112,9 @@ class TestDatabaseAndAgent(unittest.TestCase):
     def test_compare_basket(self):
         items = self.agent.parse_customer_query_to_items("masło, mleko, banany")
         comparison = self.agent.compare_basket(items)
-        self.assertIn(comparison.best_store, [StoreName.BIEDRONKA, StoreName.LIDL, StoreName.AUCHAN])
+        self.assertIsNotNone(comparison.best_store)
         self.assertGreater(comparison.lowest_total, 0)
-        self.assertEqual(len(comparison.store_summaries), 3)
+        self.assertGreaterEqual(len(comparison.store_summaries), 5)
         self.assertIn("Najbardziej opłaca się", comparison.recommendation)
 
     def test_agent_single_item_prompt(self):

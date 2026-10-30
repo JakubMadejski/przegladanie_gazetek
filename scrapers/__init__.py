@@ -2,6 +2,7 @@ from .base import BaseScraper
 from .biedronka import BiedronkaScraper
 from .lidl import LidlScraper
 from .auchan import AuchanScraper
+from .generic_store import GenericStoreScraper
 from .manager import ScraperManager
 
 __all__ = [
@@ -9,6 +10,6 @@ __all__ = [
     "BiedronkaScraper",
     "LidlScraper",
     "AuchanScraper",
+    "GenericStoreScraper",
     "ScraperManager"
 ]
-

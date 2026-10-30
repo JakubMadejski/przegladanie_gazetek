@@ -1,0 +1,193 @@
+{
+  "leaflet": {
+    "id": "dino_gazetka_aktualna",
+    "store": "Dino",
+    "title": "Dino - W Dino Zawsze Świeżo i Tanio",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://marketdino.pl",
+    "pages_count": 32
+  },
+  "deals": [
+    {
+      "id": "din_wodka_zubrowka",
+      "name": "Wódka Żubrówka Biała 40% 500ml",
+      "promo_price": 25.89,
+      "regular_price": 31.49,
+      "conditions": "supercena tygodnia",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_wodka_bocian",
+      "name": "Wódka Biały Bocian 40% 500ml",
+      "promo_price": 27.99,
+      "regular_price": 33.99,
+      "conditions": "okazja w Dino",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_wodka_soplica",
+      "name": "Wódka Soplica Szlachetna 40% 500ml",
+      "promo_price": 26.79,
+      "regular_price": 31.99,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_wodka_krupnik",
+      "name": "Wódka Krupnik Premium 40% 500ml",
+      "promo_price": 24.89,
+      "regular_price": 29.99,
+      "conditions": "cena promocyjna",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_wodka_wyborowa",
+      "name": "Wódka Wyborowa 40% 500ml",
+      "promo_price": 27.49,
+      "regular_price": 32.99,
+      "conditions": "supercena",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_monster_energy",
+      "name": "Napój energetyczny Monster Energy 500ml puszka",
+      "promo_price": 4.89,
+      "regular_price": 6.89,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "din_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.29,
+      "regular_price": 7.19,
+      "conditions": "supercena",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "din_tiger_energy",
+      "name": "Napój energetyzujący Tiger Energy Drink 250ml",
+      "promo_price": 2.59,
+      "regular_price": 3.69,
+      "conditions": "kup 2 i zapłać mniej",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "din_maslo_mlekovita",
+      "name": "Masło Ekstra 82% Mlekovita 200g",
+      "promo_price": 4.39,
+      "regular_price": 7.29,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "din_kurczak_filet",
+      "name": "Świeży filet z piersi kurczaka z polskich ferm",
+      "promo_price": 16.49,
+      "regular_price": 23.99,
+      "conditions": "supercena tygodnia",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "din_schab_b_k",
+      "name": "Schab wieprzowy bez kości ze stoiska mięsnego",
+      "promo_price": 12.49,
+      "regular_price": 18.49,
+      "conditions": "świeże mięso na wagę",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "din_mleko_laciate",
+      "name": "Mleko UHT Łaciate 3.2% 1l",
+      "promo_price": 2.85,
+      "regular_price": 4.19,
+      "conditions": "przy zakupie 6 sztuk",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "din_kawa_lavazza",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 53.99,
+      "regular_price": 77.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "din_banany",
+      "name": "Banany świeże deserowe na wagę",
+      "promo_price": 3.69,
+      "regular_price": 6.79,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "din_jaja_chowaniec",
+      "name": "Jaja ściółkowe klasa M 10 sztuk",
+      "promo_price": 6.89,
+      "regular_price": 9.29,
+      "conditions": "okazja",
+      "unit_info": "10 szt",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "din_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.09,
+      "regular_price": 4.39,
+      "conditions": "w 4-paku",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_piwo_tyskie",
+      "name": "Piwo Tyskie Gronie 500ml puszka",
+      "promo_price": 2.79,
+      "regular_price": 3.99,
+      "conditions": "przy zakupie 4 puszek",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "din_chipsy_lays",
+      "name": "Chipsy Lay's Solone / Papryka 130g",
+      "promo_price": 4.89,
+      "regular_price": 7.19,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "din_czekolada_milka",
+      "name": "Czekolada Milka alpejska 100g",
+      "promo_price": 3.89,
+      "regular_price": 5.39,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "din_ser_gouda",
+      "name": "Ser Gouda w kawałku / plastrach 400g",
+      "promo_price": 8.79,
+      "regular_price": 12.99,
+      "conditions": "okazja",
+      "unit_info": "400g",
+      "category": "Nabiał i jaja"
+    }
+  ]
+}

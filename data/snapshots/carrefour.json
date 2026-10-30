@@ -1,0 +1,139 @@
+{
+  "leaflet": {
+    "id": "carrefour_gazetka_aktualna",
+    "store": "Carrefour",
+    "title": "Carrefour - Wielkie Oszczędności i Hity Cenowe",
+    "valid_from": "2026-10-29",
+    "valid_to": "2026-11-04",
+    "source_url": "https://www.carrefour.pl",
+    "pages_count": 40
+  },
+  "deals": [
+    {
+      "id": "carr_wodka_zubrowka",
+      "name": "Wódka Żubrówka Biała 40% 500ml",
+      "promo_price": 25.69,
+      "regular_price": 31.99,
+      "conditions": "z aplikacją Mój Carrefour",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "carr_wodka_bocian",
+      "name": "Wódka Biały Bocian 40% 500ml",
+      "promo_price": 28.19,
+      "regular_price": 34.99,
+      "conditions": "supercena",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "carr_wodka_soplica",
+      "name": "Wódka Soplica Szlachetna 40% 500ml",
+      "promo_price": 26.69,
+      "regular_price": 32.49,
+      "conditions": "z kuponem w aplikacji",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "carr_wodka_finlandia",
+      "name": "Wódka Finlandia Vodka 40% 700ml",
+      "promo_price": 48.49,
+      "regular_price": 63.99,
+      "conditions": "okazja tygodnia",
+      "unit_info": "700ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "carr_monster_energy",
+      "name": "Napój energetyczny Monster Energy 500ml puszka",
+      "promo_price": 4.79,
+      "regular_price": 6.99,
+      "conditions": "z aplikacją Mój Carrefour",
+      "unit_info": "500ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "carr_red_bull",
+      "name": "Napój energetyczny Red Bull Energy Drink 250ml",
+      "promo_price": 5.19,
+      "regular_price": 7.29,
+      "conditions": "supercena",
+      "unit_info": "250ml",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "carr_maslo_ekstra",
+      "name": "Masło Ekstra 82% 200g Carrefour Classic",
+      "promo_price": 4.35,
+      "regular_price": 7.39,
+      "conditions": "z aplikacją Mój Carrefour",
+      "unit_info": "200g",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "carr_kurczak_filet",
+      "name": "Świeży filet z piersi kurczaka Jakość z Natury Carrefour",
+      "promo_price": 16.59,
+      "regular_price": 24.29,
+      "conditions": "supercena",
+      "unit_info": "1kg",
+      "category": "Mięso i wędliny"
+    },
+    {
+      "id": "carr_mleko_laciate",
+      "name": "Mleko UHT Łaciate 3.2% 1l",
+      "promo_price": 2.89,
+      "regular_price": 4.19,
+      "conditions": "przy zakupie 6 sztuk",
+      "unit_info": "1l",
+      "category": "Nabiał i jaja"
+    },
+    {
+      "id": "carr_kawa_lavazza",
+      "name": "Kawa ziarnista Lavazza Qualità Oro 1kg",
+      "promo_price": 52.89,
+      "regular_price": 77.49,
+      "conditions": "z aplikacją Mój Carrefour",
+      "unit_info": "1kg",
+      "category": "Napoje i kawa"
+    },
+    {
+      "id": "carr_banany",
+      "name": "Banany luzem świeże",
+      "promo_price": 3.59,
+      "regular_price": 6.89,
+      "conditions": null,
+      "unit_info": "1kg",
+      "category": "Owoce i warzywa"
+    },
+    {
+      "id": "carr_piwo_zywiec",
+      "name": "Piwo Żywiec jasne pełne 500ml puszka",
+      "promo_price": 3.05,
+      "regular_price": 4.39,
+      "conditions": "w 6-paku",
+      "unit_info": "500ml",
+      "category": "Alkohole"
+    },
+    {
+      "id": "carr_chipsy_lays",
+      "name": "Chipsy Lay's Solone / Papryka 130g",
+      "promo_price": 4.85,
+      "regular_price": 7.29,
+      "conditions": "przy zakupie 2 sztuk",
+      "unit_info": "130g",
+      "category": "Słodycze i przekąski"
+    },
+    {
+      "id": "carr_czekolada_milka",
+      "name": "Czekolada Milka alpejska 100g",
+      "promo_price": 3.85,
+      "regular_price": 5.49,
+      "conditions": "przy zakupie 3 sztuk",
+      "unit_info": "100g",
+      "category": "Słodycze i przekąski"
+    }
+  ]
+}

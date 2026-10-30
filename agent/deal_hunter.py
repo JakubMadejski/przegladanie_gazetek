@@ -120,7 +120,15 @@ class DealHunterAgent:
     def compare_basket(self, items: List[BasketItemRequest], stores: Optional[List[StoreName]] = None) -> CustomerBasketComparison:
         """Porównuje łączny koszt koszyka zakupowego we wszystkich sklepach."""
         if stores is None:
-            stores = [StoreName.BIEDRONKA, StoreName.LIDL, StoreName.AUCHAN]
+            stores = [
+                StoreName.BIEDRONKA,
+                StoreName.LIDL,
+                StoreName.AUCHAN,
+                StoreName.ZABKA,
+                StoreName.DINO,
+                StoreName.KAUFLAND,
+                StoreName.CARREFOUR
+            ]
 
         store_summaries = []
 

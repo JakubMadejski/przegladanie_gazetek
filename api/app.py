@@ -43,7 +43,7 @@ def get_stats():
     """Zwraca statystyki bazy danych i podsumowanie sklepów."""
     stats = db.get_stats()
     stores_info = []
-    for s_name in [StoreName.BIEDRONKA, StoreName.LIDL, StoreName.AUCHAN]:
+    for s_name in scraper_manager.scrapers.keys():
         meta = STORE_METADATA.get(s_name)
         count = stats["store_counts"].get(s_name.value, 0)
         stores_info.append({
